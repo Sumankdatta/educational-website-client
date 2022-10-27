@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import Category from '../Category/Category';
 
 import LeftSideCourseName from '../LeftSideCourseName/LeftSideCourseName';
 
@@ -14,7 +15,7 @@ const Courses = () => {
                     <LeftSideCourseName></LeftSideCourseName>
                 </Col>
                 <Col lg='7'>
-                    <h1>this is course</h1>
+                    
                 </Col>
             </Row>
         </Container>
