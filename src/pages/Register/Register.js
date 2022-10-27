@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -8,8 +8,11 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Register = () => {
-    const {providerLogIn}=useContext(AuthContext)
+    const {providerLogIn,createUser}=useContext(AuthContext)
     const googleProvider=new GoogleAuthProvider()
+    const [error, setError] = useState(true);
+
+
     const handalGoogleSignIn=()=>{
 providerLogIn(googleProvider)
 
@@ -21,12 +24,37 @@ providerLogIn(googleProvider)
     console.error('error',error)
 })
     }
+
+
+    
+    
+    
+    const handleRegister = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                form.reset()
+                setError(false)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
+    }
     
 
     
 
     return (
-        <Form className='w-50  mx-auto '>
+        <Form onSubmit={handleRegister} className='w-50  mx-auto '>
         <Form.Group className="mb-3" >
             <Form.Label>Your Name</Form.Label>
             <Form.Control name='name' type="text" placeholder="Your Name" />
@@ -49,7 +77,7 @@ providerLogIn(googleProvider)
             Registar
         </Button>
         <Form.Text className="text-danger">
-          
+          {error}
         </Form.Text>
         
         <div className=''>
