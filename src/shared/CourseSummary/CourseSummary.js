@@ -14,10 +14,10 @@ const CourseSummary = ({course}) => {
         <Card.Title>{title}</Card.Title>
         <Card.Text>
         {details.length > 150 ?
-                        <p>{details.slice(0, 250) + '...'} <Link to={`/coursedetails/${_id}`}>Read more</Link></p>
+                        <p>{details.slice(0, 250) + '...'} <Button variant="secondary"><Link className='text-light' to={`/coursedetails/${_id}`}>Premium Access</Link></Button></p>
                         : <p>{details}</p>}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        
       </Card.Body>
     </Card>
     );
