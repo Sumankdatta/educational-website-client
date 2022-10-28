@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 const Footer = () => {
     return (
-        <Card className="text-center">
+        <Card className="text-center bg-dark text-light mt-5">
        
         <Card.Body>
           

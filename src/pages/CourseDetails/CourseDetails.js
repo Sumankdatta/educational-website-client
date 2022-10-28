@@ -3,6 +3,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { useLoaderData } from 'react-router-dom';
 
+
 const CourseDetails = () => {
     const course=useLoaderData();
 
@@ -16,9 +17,14 @@ const CourseDetails = () => {
         <Card.Title>{title}</Card.Title>
           <Card.Text>
           {details}
+
+          
           </Card.Text>
           
         </Card.Body>
+
+        
+
       </Card>
     );
 };

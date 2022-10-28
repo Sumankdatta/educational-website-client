@@ -1,0 +1,20 @@
+.headername a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.headername a:hover{
+    color: orange;
+}
+
+.login a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500; 
+    margin-right: 12px;
+    margin-top: 10px;
+    
+}
+.login a:hover{
+    color: orange;
+}

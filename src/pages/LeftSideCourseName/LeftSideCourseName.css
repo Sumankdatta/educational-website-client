@@ -1,0 +1,7 @@
+.coursename a{
+    text-decoration: none;
+    background: gold;
+    padding: 5px;
+    color: black;
+    font-weight: 600;
+}

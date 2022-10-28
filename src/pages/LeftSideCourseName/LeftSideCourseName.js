@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import './LeftSideCourseName.css';
 import { Link } from 'react-router-dom';
 
 const LeftSideCourseName = () => {
@@ -10,7 +11,7 @@ const LeftSideCourseName = () => {
         .then(data =>setCategories(data))
     },[])
     return (
-        <div className=''>
+        <div className='coursename'>
             <h4>All Courses :</h4>
             <div>
                 {

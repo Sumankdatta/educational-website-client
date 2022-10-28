@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -51,6 +51,7 @@ const Login = () => {
             <Button variant="primary" type="submit">
                 Login
             </Button>
+            <p>New to this website ? Please <Link to='/register'>Register</Link></p>
             <Form.Text className="text-danger">
             <h4>{error}</h4>
             </Form.Text>
