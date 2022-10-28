@@ -20,19 +20,19 @@ export const routes=createBrowserRouter([
         {
             path:'/',
             element:<Courses></Courses>,
-            loader:()=>fetch('http://localhost:5000/coursedetails')
+            loader:()=>fetch('https://educational-website-server-liard.vercel.app/coursedetails')
             
         },
         {
             path:'/coursedetails/:id',
             element:<PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/coursedetails/${params.id}`)
+            loader:({params})=>fetch(`https://educational-website-server-liard.vercel.app/coursedetails/${params.id}`)
            
         },
         {
             path:'/category/:id',
             element:<Category></Category>,
-            loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+            loader: ({params}) => fetch(`https://educational-website-server-liard.vercel.app/category/${params.id}`)
             
         },
         {
