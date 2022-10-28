@@ -13,9 +13,9 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import LeftSideCourseName from '../../pages/LeftSideCourseName/LeftSideCourseName';
 import './Header.css';
 const Header = () => {
-    const [state,setState]=useState(false)
+    
     const { user, logOut } = useContext(AuthContext);
-
+    const [state,setState]=useState(false)
 const toggle=()=>{
     setState(!state)
 }
@@ -45,7 +45,7 @@ const toggle=()=>{
                         <Nav.Link className='login'>
 
                             {
-                                user?.uid || user?.email?
+                                user?.uid ?
                                     <>
                                         <span>{user?.displayName}</span>
                                         <Button variant="light" onClick={handalLogout}>Logout</Button>
@@ -61,7 +61,7 @@ const toggle=()=>{
                         </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                             {
-                                user?.uid || user?.email?.photoURL?
+                                user?.uid ?
 
                                     <Image title={user?.displayName} style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image>
                                     : <FaUser></FaUser>

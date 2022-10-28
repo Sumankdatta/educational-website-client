@@ -16,7 +16,7 @@ const Courses = () => {
                     <LeftSideCourseName></LeftSideCourseName>
                 </Col>
                 <Col lg='8'>
-                    <h3>All Courses :{allCourses.length}</h3>
+                   
                     {
                         allCourses.map(course=><CourseSummary
                         key={course.id}
