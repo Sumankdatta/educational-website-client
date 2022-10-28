@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const LeftSideCourseName = () => {
     const [categories,setCategories]=useState([])
     useEffect(()=>{
-        fetch('https://educational-website-clie-734b9.web.app')
+        fetch('https://educational-website-server-sumankdatta.vercel.app/course-categories')
         .then(res =>res.json())
         .then(data =>setCategories(data))
     },[])

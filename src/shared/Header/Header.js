@@ -42,7 +42,7 @@ const toggle=()=>{
 
                     </Nav>
                     <Nav>
-                        <Nav.Link className='login'>
+                        <Nav.Link className='login d-flex align-items-center'>
 
                             {
                                 user?.uid ?
@@ -52,10 +52,10 @@ const toggle=()=>{
                                     </>
 
                                     :
-                                    <>
+                                    <div className=''>
                                         <Link to='/login'>Login</Link>
                                         <Link to='/register'>Register</Link>
-                                    </>
+                                    </div>
 
                             }
                         </Nav.Link>
